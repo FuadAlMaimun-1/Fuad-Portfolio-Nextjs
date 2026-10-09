@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root variables */
+
+
+.preahvihear-regular {
+  font-family: "Preahvihear", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:root {
+  --color-dark-bg: #0f1419;
+  --color-dark-card: #1a1f2e;
+  --color-dark-border: #2d3748;
+  --color-accent-blue: #3b82f6;
+  --color-accent-orange: #f97316;
+  --color-text-primary: #f0f4f8;
+  --color-text-secondary: #a0aec0;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+/* Base styles */
+* {
+  border-color: var(--color-dark-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-primary);
+  font-family: 'Preahvihear', sans-serif;
+
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark-border);
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-text-secondary);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-accent-blue);
+  color: #fff;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 0.75rem;
+  opacity: 0.1;
+}
+
+.glass-card {
+  box-shadow: 0 8px 30px rgba(15, 20, 25, 0.35);
+}
+
+/* Gradient backgrounds */
+.gradient-text {
+  background-image: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-button {
+  background-image: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-orange));
+}
+
+/* Button base styles */
+.btn-base {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, var(--color-accent-blue), var(--color-accent-orange));
+  color: #fff;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-accent-blue);
+  color: var(--color-accent-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent-blue);
+  color: #fff;
+}
+
+.btn-ghost {
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-dark-border);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-dark-card);
+}
+
+/* Responsive container */
+.container-safe {
+  width: min(100%, 1280px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-safe {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-safe {
+    padding-inline: 2rem;
+  }
+}
+
+/* Section spacing */
+.section {
+  padding-block: 4rem;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-block: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 8rem;
+  }
+}
+
+/* Heading styles */
+.heading-1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+.heading-2 {
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+}
+
+.heading-3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+/* Link styles */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent-blue);
+}
+
+/* Input field styles */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: var(--color-text-secondary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: var(--color-dark-border);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-medium {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+@keyframes float-side {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(12px);
+  }
+}
+
+.float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: float-medium 3.5s ease-in-out infinite;
+}
+
+.float-side {
+  animation: float-side 4.5s ease-in-out infinite;
+}
