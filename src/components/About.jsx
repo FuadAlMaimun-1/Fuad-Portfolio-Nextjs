@@ -9,7 +9,8 @@ const About = () => {
         setIsVisible(true);
         observer.disconnect();
       }
-    }, {
+    }, 
+    {
       threshold: 0.2
     });
     observer.observe(section);
