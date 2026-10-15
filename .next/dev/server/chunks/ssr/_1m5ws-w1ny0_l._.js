@@ -4457,7 +4457,7 @@ const projectsData = [
             "Better Auth"
         ],
         image: "/images/news.png",
-        githubUrl: "https://github.com/FuadAlMaimun-1/bd-news-24",
+        githubUrl: "https://github.com/FuadAlMaimun-1/bangla-news-24",
         liveUrl: "https://bd-news-24.vercel.app",
         role: "Full Stack Developer",
         status: "Production Ready",
@@ -4578,122 +4578,6 @@ const projectsData = [
             "Add customer product reviews with photo uploads and verified buyer badges.",
             "Implement a wishlist feature with price drop notification emails.",
             "Build a vendor management portal for inventory tracking."
-        ]
-    },
-    {
-        id: "4",
-        title: "Bazar Dor BD",
-        category: "Grocery & Commodity Price Tracker",
-        description: "A community-focused commodity and daily grocery price tracking web app helping consumers compare prices, discover local market trends, and make informed shopping choices.",
-        detailedDescription: "Bazar Dor BD addresses daily market price fluctuations by offering consumers transparent price comparisons across major essential commodities. Users can monitor price trends, search everyday staples, and locate affordable alternatives.",
-        technologies: [
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "REST API"
-        ],
-        image: "/images/baza-dor.png",
-        githubUrl: "https://github.com/FuadAlMaimun-1/bazar-dor-a07",
-        liveUrl: "https://bazar-dor-a07-seven.vercel.app",
-        role: "Full Stack Developer",
-        status: "Live Project",
-        features: [
-            "Real-time price index for daily grocery items (vegetables, rice, oil, meat)",
-            "Interactive historical price trend charts for commodity tracking",
-            "Search and filter by market locality and category",
-            "Community crowd-sourced price submission and verification interface"
-        ],
-        challenges: [
-            {
-                title: "Dynamic Price Volatility Representation",
-                detail: "Designing charts that clearly indicate daily price drops or surges without overwhelming non-technical consumers."
-            },
-            {
-                title: "Data Verification & Crowd-sourcing",
-                detail: "Implementing moderation checks to prevent false price submissions from skewing market averages."
-            }
-        ],
-        futurePlans: [
-            "Add localized price alerts via Telegram / WhatsApp bot.",
-            "Integrate OCR price tag scanning using smartphone cameras.",
-            "Expand coverage to district-level local markets across Bangladesh."
-        ]
-    },
-    {
-        id: "5",
-        title: "Dev Stack Task Manager",
-        category: "Developer Productivity Suite",
-        description: "A kanban-style productivity tool for developers and teams featuring drag-and-drop workflow boards, sprint analytics, and real-time task progression.",
-        detailedDescription: "Dev Stack streamlines task management for developers by providing an intuitive kanban board, tag-based categorization, urgency flags, and progress metrics. Designed with clean keyboard shortcuts and smooth visual feedback.",
-        technologies: [
-            "React",
-            "TypeScript",
-            "Tailwind CSS",
-            "Context API"
-        ],
-        image: "/images/dev stack.png",
-        githubUrl: "https://github.com/FuadAlMaimun-1/dev-stack-assignment-5",
-        liveUrl: "https://dev-stack-assignment-5.netlify.app/",
-        role: "Frontend Developer",
-        status: "Completed",
-        features: [
-            "Fluid drag-and-drop task movement across customizable swimlanes",
-            "Priority badges, due-date countdowns, and completion metrics",
-            "Tag-based task filtering and fuzzy search functionality",
-            "Local storage data persistence and export/import options"
-        ],
-        challenges: [
-            {
-                title: "Accessible Drag-and-Drop Implementation",
-                detail: "Ensuring smooth touch interactions on mobile devices alongside pointer drag events on desktop browsers."
-            },
-            {
-                title: "State Persistence Without Data Loss",
-                detail: "Managing serialized state updates so user reordering is instantly saved without lag."
-            }
-        ],
-        futurePlans: [
-            "Add collaborative real-time team boards using WebSockets.",
-            "Integrate GitHub issue synchronization to import issues directly into tasks.",
-            "Introduce time-tracking pomodoro timers for individual tasks."
-        ]
-    },
-    {
-        id: "6",
-        title: "BPL Dream 11 Fantasy Squad",
-        category: "Sports & Gaming Web Application",
-        description: "An interactive cricket fantasy squad selector for the Bangladesh Premier League featuring credit cap limits, player analytics, and live team balance checks.",
-        detailedDescription: "BPL Dream 11 lets cricket lovers assemble their dream BPL match squad within realistic salary caps. Offers player performance metrics, role quotas (batsmen, bowlers, all-rounders), and interactive balance calculators.",
-        technologies: [
-            "React",
-            "DaisyUI",
-            "Tailwind CSS",
-            "JavaScript"
-        ],
-        image: "/images/bpl-dream.png",
-        githubUrl: "https://github.com/FuadAlMaimun-1/ai-image-gen",
-        liveUrl: "https://bangladesh-national-team.netlify.app/",
-        role: "Frontend Developer",
-        status: "Live Project",
-        features: [
-            "Real-time budget / credit calculation with dynamic balance counters",
-            "Role-based player quotas (Batsmen, Bowlers, Wicketkeepers, All-rounders)",
-            "Interactive card selection with animated notifications upon squad actions",
-            "Squad review drawer with visual team composition breakdown"
-        ],
-        challenges: [
-            {
-                title: "Dynamic Constraints & Validation Logic",
-                detail: "Enforcing multi-condition squad constraints (max 6 players, player credits <= budget, role balances) with instant user feedback."
-            },
-            {
-                title: "Responsive Card Grid with Rich Player Stats",
-                detail: "Fitting player portraits, country flags, stats, and selection buttons into compact cards across all phone sizes."
-            }
-        ],
-        futurePlans: [
-            "Integrate live ball-by-ball score APIs for in-match fantasy scoring.",
-            "Add multiplayer leaderboards and private leagues for friends."
         ]
     }
 ];
