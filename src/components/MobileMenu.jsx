@@ -134,13 +134,20 @@ const MobileMenu = ({
                   )}
 
                   <div
-                    onClick={onClose}
+                    onClick={() => {
+                      document.body.style.overflow = "";
+                      onClose?.();
+                    }}
                     className="relative px-4 py-3.5"
                   >
                     <NavLink
                       href={`#${item.id}`}
                       label={item.label}
                       isActive={isActive}
+                      onClick={() => {
+                        document.body.style.overflow = "";
+                        onClose?.();
+                      }}
                     />
                   </div>
                 </div>

@@ -25,3 +25,9 @@ dist-ssr
 
 .vercel
 .env*
+
+.next/
+node_modules/
+dist/
+.vercel
+.env*

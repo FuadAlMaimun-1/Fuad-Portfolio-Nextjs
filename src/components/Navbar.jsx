@@ -1,98 +1,98 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { TbFileCvFilled } from "react-icons/tb";
 import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
-import { TbFileCvFilled } from "react-icons/tb";
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+
   const navItems = [
-    {
-      label: "Home",
-      id: "home",
-    },
-    {
-      label: "About",
-      id: "about",
-    },
-    {
-      label: "Skills",
-      id: "skills",
-    },
-    {
-      label: "Projects",
-      id: "projects",
-    },
-    {
-      label: "Education",
-      id: "education",
-    },
-    {
-      label: "Contact",
-      id: "contact",
-    },
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Projects", id: "projects" },
+    { label: "Education", id: "education" },
+    { label: "Contact", id: "contact" },
   ];
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
+
+      // পেজের একদম নিচে পৌঁছালে Contact active হবে
+      const isAtBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 5;
+
+      if (isAtBottom) {
+        setActiveSection("contact");
+        return;
+      }
+
+      const scrollPosition = window.scrollY + 160;
       let currentSection = "home";
+
       for (const item of navItems) {
         const element = document.getElementById(item.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            currentSection = item.id;
-            break;
-          }
+
+        if (element && element.offsetTop <= scrollPosition) {
+          currentSection = item.id;
         }
       }
+
       setActiveSection(currentSection);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleHomeClick = (e) => {
     e.preventDefault();
+
     const homeSection = document.getElementById("home");
+
     homeSection?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-    window.history.pushState(null, "", "#home");
+
+    // URL-এ #home যোগ হবে না
+    window.history.replaceState(null, "", window.location.pathname);
+
     setActiveSection("home");
     setIsMobileMenuOpen(false);
   };
+
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${isScrolled ? "bg-[#08050d]/80 backdrop-blur-xl" : "bg-transparent"}`}
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
+        isScrolled ? "bg-[#08050d]/80 backdrop-blur-xl" : "bg-transparent"
+      }`}
     >
       {/* Subtle bottom border */}
       <div
-        className={`absolute bottom-0 left-0 right-0 h-px transition-all duration-500 ${isScrolled ? "bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" : "bg-transparent"}`}
+        className={`absolute bottom-0 left-0 right-0 h-px transition-all duration-500 ${
+          isScrolled
+            ? "bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"
+            : "bg-transparent"
+        }`}
       />
 
       <nav className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
-        {/* ================= LOGO ================= */}
+        {/* Logo */}
         <a
           href="#home"
           onClick={handleHomeClick}
           className="group flex items-center gap-3"
         >
-          {/* Logo Badge */}
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-purple-400/20 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/10 shadow-lg shadow-purple-900/20 transition-all duration-300 group-hover:border-purple-400/50 group-hover:shadow-purple-500/20">
-            <span className="bg-gradient-to-br from-purple-300 to-fuchsia-400 bg-clip-text text-xl font-bold text-transparent">
-              F
-            </span>
-            {/* Glow */}
-            <span className="absolute inset-0 -z-10 rounded-xl bg-purple-600/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
-          </div>
-
-          {/* Name */}
           <div className="hidden sm:block">
             <p className="text-[17px] font-semibold tracking-tight text-white">
               Fuad
@@ -105,7 +105,7 @@ const Navbar = () => {
           </div>
         </a>
 
-        {/* ================= DESKTOP NAV ================= */}
+        {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
             <NavLink
@@ -117,7 +117,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* ================= RIGHT SIDE ================= */}
+        {/* Right Side */}
         <div className="flex items-center gap-3">
           {/* GitHub */}
           <a
@@ -129,6 +129,7 @@ const Navbar = () => {
           >
             <FaGithub size={19} />
           </a>
+
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/fuad-al-maimun-97ba42399/"
@@ -139,6 +140,8 @@ const Navbar = () => {
           >
             <FaLinkedin size={19} />
           </a>
+
+          {/* WhatsApp */}
           <a
             href="https://api.whatsapp.com/send/?phone=%2B8801300725948&text&type=phone_number&app_absent=0"
             target="_blank"
@@ -148,10 +151,11 @@ const Navbar = () => {
           >
             <FaWhatsapp size={19} />
           </a>
+
           {/* Divider */}
           <div className="mx-1 hidden h-5 w-px bg-white/10 sm:block" />
 
-          {/* CV */}  
+          {/* CV Download */}
           <a
             href="/Fuad_Al_Maimun_CV.pdf"
             download="Fuad_Al_Maimun_CV.pdf"
@@ -161,8 +165,8 @@ const Navbar = () => {
           >
             <TbFileCvFilled size={19} />
           </a>
-          
-          {/* Mobile Menu */}
+
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen((previous) => !previous)}
             aria-label={
@@ -170,6 +174,7 @@ const Navbar = () => {
                 ? "Close navigation menu"
                 : "Open navigation menu"
             }
+            aria-expanded={isMobileMenuOpen}
             className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-slate-300 transition-all duration-300 hover:border-purple-400/30 hover:bg-purple-500/10 hover:text-white lg:hidden"
           >
             {isMobileMenuOpen ? <X size={21} /> : <Menu size={21} />}
@@ -177,7 +182,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* ================= MOBILE MENU ================= */}
+      {/* Mobile Menu */}
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
@@ -187,4 +192,5 @@ const Navbar = () => {
     </header>
   );
 };
+
 export default Navbar;

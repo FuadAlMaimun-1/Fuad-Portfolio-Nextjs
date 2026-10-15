@@ -1,12 +1,5 @@
 import "../src/styles/globals.css";
 
-export const metadata = {
-  title: "Fuad Al Maimun | Full Stack Developer",
-  description: "Portfolio of Fuad Al Maimun - Full Stack Web Developer specializing in React, Next.js, TypeScript, Node.js, and modern web applications.",
-  icons: {
-    icon: "/favicon.svg",
-  },
-};
 
 export default function RootLayout({ children }) {
   return (
@@ -18,6 +11,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Preahvihear&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" type="image/jpeg" href="/images/profile.png" />
       </head>
       <body className="bg-dark-bg text-text-primary antialiased selection:bg-purple-600 selection:text-white">
         {children}
