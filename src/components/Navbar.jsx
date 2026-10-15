@@ -13,7 +13,10 @@ const Navbar = () => {
       label: "Home",
       id: "home",
     },
-    // { label: "About", id: "about" },
+    {
+      label: "About",
+      id: "about",
+    },
     {
       label: "Skills",
       id: "skills",
@@ -22,8 +25,10 @@ const Navbar = () => {
       label: "Projects",
       id: "projects",
     },
-    // { label: "Services", id: "services" },
-    // { label: "Experience", id: "experience" },
+    {
+      label: "Education",
+      id: "education",
+    },
     {
       label: "Contact",
       id: "contact",
@@ -78,13 +83,14 @@ const Navbar = () => {
           onClick={handleHomeClick}
           className="group flex items-center gap-3"
         >
-          {/* Logo */}
-          {/* <div className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-purple-400/20 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/10 shadow-lg shadow-purple-900/20 transition-all duration-300 group-hover:border-purple-400/50 group-hover:shadow-purple-500/20">
+          {/* Logo Badge */}
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-purple-400/20 bg-gradient-to-br from-purple-600/20 to-fuchsia-600/10 shadow-lg shadow-purple-900/20 transition-all duration-300 group-hover:border-purple-400/50 group-hover:shadow-purple-500/20">
             <span className="bg-gradient-to-br from-purple-300 to-fuchsia-400 bg-clip-text text-xl font-bold text-transparent">
               F
             </span>
-              {/* Glow */}
-          <span className="absolute inset-0 -z-10 rounded-xl bg-purple-600/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+            {/* Glow */}
+            <span className="absolute inset-0 -z-10 rounded-xl bg-purple-600/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+          </div>
 
           {/* Name */}
           <div className="hidden sm:block">
@@ -93,7 +99,7 @@ const Navbar = () => {
               <span className="text-purple-400">.</span>
             </p>
 
-            <p className="text-[9px] uppercase tracking-[0.25em] text-slate-600">
+            <p className="text-[9px] uppercase tracking-[0.25em] text-slate-500">
               Developer
             </p>
           </div>
@@ -137,7 +143,7 @@ const Navbar = () => {
             href="https://api.whatsapp.com/send/?phone=%2B8801300725948&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            aria-label="WhatsApp"
             className="hidden rounded-full p-2.5 text-slate-500 transition-all duration-300 hover:bg-purple-500/10 hover:text-purple-300 sm:block"
           >
             <FaWhatsapp size={19} />
