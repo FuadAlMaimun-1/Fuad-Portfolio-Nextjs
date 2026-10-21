@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "frames": "node scripts/optimize-frames.mjs"
   },
   "dependencies": {
     "@fontsource/preahvihear": "^5.3.0",

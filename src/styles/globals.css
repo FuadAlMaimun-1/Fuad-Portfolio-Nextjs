@@ -392,3 +392,80 @@ select:disabled {
 .float-side {
   animation: float-side 4.5s ease-in-out infinite;
 }
+
+/* Typewriter blinking cursor */
+@keyframes hero-blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero-cursor {
+  animation: hero-blink 1s step-end infinite;
+}
+
+/* Rotating gradient ring around the profile image */
+@keyframes profile-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.profile-ring {
+  background: conic-gradient(
+    from 180deg,
+    rgba(168, 85, 247, 0) 0deg,
+    rgba(192, 132, 252, 0.95) 90deg,
+    rgba(232, 121, 249, 0.7) 170deg,
+    rgba(168, 85, 247, 0) 260deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  animation: profile-ring-spin 7s linear infinite;
+}
+
+/* Soft breathing glow behind the profile */
+@keyframes glow-breathe {
+
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.glow-breathe {
+  animation: glow-breathe 6s ease-in-out infinite;
+}
+
+/* Orbiting tech icons around the profile */
+@keyframes orbit-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-ring-counter {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.orbit-ring {
+  animation: orbit-ring 28s linear infinite;
+}
+
+.orbit-ring-counter {
+  animation: orbit-ring-counter 28s linear infinite;
+}
