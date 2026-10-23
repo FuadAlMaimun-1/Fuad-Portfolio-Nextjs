@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { Mail } from "lucide-react";
 export const Contact = () => {
   return <footer id="contact" className="relative scroll-mt-20 bg-[#0A0518] text-white px-6 md:px-10 lg:px-16 py-10 font-['Preahvihear'] overflow-hidden">
@@ -47,15 +47,22 @@ export const Contact = () => {
                 <FaLinkedin size={17} />
               </a>
 
+               {/* WhatsApp */}
+              <a href="https://api.whatsapp.com/send/?phone=%2B8801300725948&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-2.5 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:bg-purple-600/20 hover:border-purple-500/30 transition-all duration-300">
+                <FaWhatsapp size={17} />
+              </a>
+
               {/* Email */}
               <a href="mailto:fuadmaymun0@gmail.com" aria-label="Email" className="p-2.5 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:bg-purple-600/20 hover:border-purple-500/30 transition-all duration-300">
                 <Mail size={17} />
               </a>
 
-              {/* WhatsApp */}
-              <a href="https://api.whatsapp.com/send/?phone=%2B8801300725948&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-2.5 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:bg-purple-600/20 hover:border-purple-500/30 transition-all duration-300">
-                <FaWhatsapp size={17} />
+              {/* Facebook */}
+              <a href="https://www.facebook.com/fuad.fuadalmaimun" aria-label="Facebook" className="p-2.5 rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white hover:bg-purple-600/20 hover:border-purple-500/30 transition-all duration-300">
+                <FaFacebook size={17} />
               </a>
+
+             
 
             </div>
 
